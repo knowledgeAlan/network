@@ -59,7 +59,7 @@ body {
   background-image: url("../img/purchaseSuccess.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 0 100px;
+  background-position: 0 180px;
 }
 
 .dashboard{
@@ -83,7 +83,7 @@ body {
   background-image: url("../img/successBg.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 0 100px;
+  background-position: 0 180px;
 }
 
 .stake {
