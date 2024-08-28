@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer";
+import { useState } from "react";
 
 const Swap = () => {
+
+  const [fromValue, setFromValue] = useState('')
+  const [toValue, setToValue] = useState('')
+
   return (
     <div className="swap">
       <div className="content">
@@ -9,7 +14,9 @@ const Swap = () => {
           <div className="bg-swapBg rounded-xl flex items-center justify-between p-8">
             <input
               type="text"
-              value={'11111'}
+              value={fromValue}
+              onChange={(e)=>setFromValue(e.target.value)}
+              placeholder="0"
               className="bg-transparent outline-none text-3xl w-2/3 Regular"
             />
             <div className="text-xl">UPN</div>
@@ -20,7 +27,9 @@ const Swap = () => {
           <div className="bg-swapBg rounded-xl mt-2 flex items-center justify-between p-8">
             <input
               type="text"
-              value={'2222'}
+              value={toValue}
+              onChange={(e)=>setToValue(e.target.value)}
+              placeholder="0"
               className="bg-transparent outline-none text-3xl w-2/3 Regular"
             />
             <div className="text-xl">USDT</div>
