@@ -28,7 +28,7 @@ const Dashboard = () => {
               <div className="text-3xl">160M</div>
             </div>
           </div>
-          <Link to="/">
+          <Link to="/search">
             <button className="bg-orange rounded-3xl py-2 px-6 text-black mt-10 w-4/5 h-14 text-xl">
               View Transaction
             </button>

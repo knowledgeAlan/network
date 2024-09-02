@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "../../request";
+import { throttle } from "../../utils";
 
 const Stake = () => {
   const [value, setValue] = useState("");
+  const getOrderId = (orderID) => {
+    axios({
+      method: "get",
+      url: "/zcloak-rest/zcloak/queryOrderId",
+      params: {
+        orderID: orderID,
+      },
+    });
+  };
+
   return (
     <div className="search">
       <div className="content">
@@ -22,7 +34,10 @@ const Stake = () => {
                 className="outline-none bg-transparent my-2 text-xl w-10/12"
                 type="text"
                 value={value}
-                onChange={(e) => setValue(e.target.value)}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                  getOrderId(e.target.value);
+                }}
                 placeholder="Search your Order ID"
               />
             </div>
