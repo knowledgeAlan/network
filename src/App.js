@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/header";
 import Home from "./pages/home";
@@ -13,7 +13,7 @@ import Search from "./pages/search";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Header />
         <Routes>
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="*" element={<div>404</div>}></Route>
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

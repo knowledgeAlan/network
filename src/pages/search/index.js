@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer";
 import { useEffect, useState } from "react";
-import axios from "../../request";
+import service from "../../request";
 import { throttle } from "../../utils";
 
 const Stake = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("1281279357536829440");
+
+  useEffect(()=>{
+    getOrderId()
+  },[])
+
   const getOrderId = (orderID) => {
-    axios({
+    service({
       method: "get",
       url: "/zcloak-rest/zcloak/queryOrderId",
       params: {
