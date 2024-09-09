@@ -11,6 +11,7 @@ service.interceptors.request.use(
     // if (store.getters.token) {
     //   config.headers['X-Token'] = getToken()
     // }
+    console.log('config', config)
     return config;
   },
   (error) => {
